@@ -19,6 +19,8 @@ public final class PhoneNumberKit: NSObject {
     let parseManager: ParseManager
     let regexManager = RegexManager()
 
+    var countryCodeSupported: [String]? = nil 
+
     // MARK: Lifecycle
 
     public init(metadataCallback: @escaping MetadataCallback = PhoneNumberKit.defaultMetadataCallback) {
@@ -107,6 +109,14 @@ public final class PhoneNumberKit: NSObject {
     ///
     /// - returns: An array of ISO 639 compliant region codes.
     public func allCountries() -> [String] {
+        if let countryCode = self.countryCodeSupported, countryCode.count > 0 {
+            let territories = self.metadataManager.territories.filter { item in
+                return countryCode.contains(where: {$0 == item.codeID})
+            }
+            let results = territories.map { $0.codeID }
+            return results
+        }
+        
         let results = self.metadataManager.territories.map { $0.codeID }
         return results
     }

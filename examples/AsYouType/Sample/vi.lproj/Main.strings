@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Above are the options you have to configure the text field"; ObjectID = "5TG-DO-EsG"; */
+"5TG-DO-EsG.text" = "Above are the options you have to configure the text field";
+
+/* Class = "UILabel"; text = "withExamplePlaceholder"; ObjectID = "A8v-uI-HHZ"; */
+"A8v-uI-HHZ.text" = "withExamplePlaceholder";
+
+/* Class = "UILabel"; text = "withFlag"; ObjectID = "RBj-U5-mU9"; */
+"RBj-U5-mU9.text" = "withFlag";
+
+/* Class = "UITextField"; placeholder = "Enter phone number"; ObjectID = "RfZ-67-gtf"; */
+"RfZ-67-gtf.placeholder" = "Enter phone number";
+
+/* Class = "UILabel"; text = "withDefaultPickerUI"; ObjectID = "ojl-wu-bPW"; */
+"ojl-wu-bPW.text" = "withDefaultPickerUI";
+
+/* Class = "UILabel"; text = "withPrefix"; ObjectID = "yn0-GF-SMV"; */
+"yn0-GF-SMV.text" = "withPrefix";

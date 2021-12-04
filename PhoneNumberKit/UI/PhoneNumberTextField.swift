@@ -14,6 +14,11 @@ import UIKit
 /// Custom text field that formats phone numbers
 open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
     public let phoneNumberKit: PhoneNumberKit
+    public var countryCodeSupported: [String]? = nil {
+        didSet {
+            self.phoneNumberKit.countryCodeSupported = self.countryCodeSupported
+        }
+    }
 
     public lazy var flagButton = UIButton()
 
@@ -232,6 +237,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
      */
     public init(frame: CGRect, phoneNumberKit: PhoneNumberKit) {
         self.phoneNumberKit = phoneNumberKit
+        self.phoneNumberKit.countryCodeSupported = self.countryCodeSupported
         super.init(frame: frame)
         self.setup()
     }
@@ -245,6 +251,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
      */
     public override init(frame: CGRect) {
         self.phoneNumberKit = PhoneNumberKit()
+        self.phoneNumberKit.countryCodeSupported = self.countryCodeSupported
         super.init(frame: frame)
         self.setup()
     }
@@ -258,6 +265,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
      */
     public required init(coder aDecoder: NSCoder) {
         self.phoneNumberKit = PhoneNumberKit()
+        self.phoneNumberKit.countryCodeSupported = self.countryCodeSupported
         super.init(coder: aDecoder)!
         self.setup()
     }
